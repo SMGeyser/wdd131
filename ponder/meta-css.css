@@ -5,10 +5,39 @@ body {
 }
 
 #content {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 40px auto;
     border: 1px solid darkgray;
-    padding: 10%;
+    padding: 50px;
 }
 
+p {
+    color: #035F9C;
+    font-size: 1.3em;
+}
 
+img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+hr {
+    height: 3px;
+    background-color: #035F9C;
+    width: 80%;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+#topics {
+    width: 55%;
+    margin: 0 auto;
+    line-height: 1.5em;
+}
+
+.list {
+    list-style: none;
+}
