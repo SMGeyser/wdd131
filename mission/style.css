@@ -1,0 +1,47 @@
+body {
+    margin: 50px 20%;
+    max-width: 1200px;
+    border: solid 1px darkgray;
+    padding: 25px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+#sub {
+    text-align: center;
+    font-size: 1em;
+    color: #4F9ACF;
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    margin: 0 20%;
+}
+
+p {
+    padding: 0 20%;
+}
+
+#list-head {
+    font-style: italic;
+}
+
+ul {
+    list-style: number;
+    margin: 0 20%;
+}
+
+li {
+    padding: 2% 0;
+}
+
+img {
+    display: block;
+    width: 20%;
+    justify-self: center;
+    padding: 5%;
+}
