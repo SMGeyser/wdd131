@@ -41,3 +41,8 @@ h1, h2, p {
 .list {
     list-style: none;
 }
+
+.background {
+    background-color: black;
+    color: white;
+}

@@ -1,36 +1,23 @@
-// variables and constants
-const PI = 3.14
-let r = 3;
-let a = r * r * PI; 
 
-console.log(a);
+let title = document.querySelector('h1');
 
-r = 20;
-a = r * r * PI
-console.log(a);
+console.log(title);
 
-r = 50
-a = r * r * PI
-console.log(a);
+title.textContent = 'Web Page Components';
 
-// type coersion
+let topics = document.querySelector('#topics');
+topics.style.color = 'purple';
 
-const one = 1;
-const two = '2';
+let wrapper = document.getElementById('content');
+wrapper.style.backgroundColor = 'lightblue';
 
-let result = 1 * 2;
-console.log(result)
+let list = document.querySelector('.list');
+list.style.border = '3px solid black';
 
-result = one + Number(two)
-console.log(result)
+let para = document.querySelector('p');
+para.style.fontSize = '3em';
 
+para.classList.add('background')
 
-let course = "CSE131"; //global scope
-if (true) {
-    let student = "John";
-    console.log(course);  //works just fine, course is global
-    console.log(student); //works just fine, it's being accessed within the block
-}
-console.log(course); //works fine, course is global
-console.log(student); //does not work, can't access a block variable outside the block
-                    
+let image = document.querySelector('img')
+image.setAttribute('src', 'images/new-logo.jpg')
