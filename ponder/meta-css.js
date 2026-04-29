@@ -17,7 +17,22 @@ list.style.border = '3px solid black';
 let para = document.querySelector('p');
 para.style.fontSize = '3em';
 
-para.classList.add('background')
+para.classList.add('background');
 
-let image = document.querySelector('img')
-image.setAttribute('src', 'images/new-logo.jpg')
+let image = document.querySelector('img');
+image.setAttribute('src', 'images/new-logo.jpg');
+
+let dropdown = document.querySelector('#webdevlist');
+// could've use const or let
+const html = document.querySelector('#html');
+const css = document.querySelector('#css');
+const js = document.querySelector('#js');
+
+dropdown.addEventListener('change', function(){
+    html.style.color = 'purple';
+    css.style.color = 'purple';
+    js.style.color = 'purple';
+    let codeValue = dropdown.value;
+    console.log(codeValue);
+    document.getElementById(codeValue).style.color = 'red';
+});
