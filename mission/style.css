@@ -45,3 +45,8 @@ img {
     justify-self: center;
     padding: 5%;
 }
+
+select {
+    display: block;
+    justify-self: center;
+}
