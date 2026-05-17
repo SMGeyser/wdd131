@@ -7,4 +7,3 @@ function toggleMenu() {
     menu.classList.toggle('hide');
     button.classList.toggle('change');
 }
-

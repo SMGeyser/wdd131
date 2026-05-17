@@ -15,13 +15,24 @@ h1 {
 
 header div {
     text-align: center;
+    margin: 20px;
 }
 
 a {
     color: white;
+    text-decoration: none;
 }
 
-nav {
+nav a {
+    padding: 20px;
+    color: white;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+}
+
+.hide {
     display: none;
 }
 
@@ -56,24 +67,44 @@ footer p {
     text-align: center;
 }
 
+dialog img {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 20vh auto;
+}
+dialog {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+}
+.close-viewer {
+    position: absolute;
+    top: 10vh;
+    right: 2vh;
+    padding: 3px 6px;
+    font-size: 1.5em;
+}
+
 @media screen and (min-width: 600px) {
     #grid {
         grid-template-columns: 1fr 1fr;
+    }
+    nav a {
+        padding: 10px;
+        display: inline;
+    }
+    header div {
+        display: none;
+    }
+    .hide {
+        display: block;
+        justify-self: center;
     }
 }
 
 @media screen and (min-width: 1000px) {
     #grid {
         grid-template-columns: 1fr 1fr 1fr;
-    }
-    nav {
-        display: block;
-        justify-self: center;
-    }
-    nav a {
-        padding: 10px;
-    }
-    header div {
-        display: none;
     }
 }

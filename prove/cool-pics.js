@@ -1,5 +1,5 @@
 
-const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector('#grid');
 const modal = document.querySelector('dialog');
 const modalImage = modal.querySelector('img');
 const closeButton = modal.querySelector('.close-viewer');
@@ -14,7 +14,7 @@ function openModal(e) {
     const src = img.getAttribute('src');
     const alt = img.getAttribute('alt');
 
-    const full = src.replace('sm', 'full');
+    const full = src.replace('pic', 'full');
 
     modalImage.src = full;
     modalImage.alt = alt;
@@ -31,4 +31,15 @@ modal.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.close();
     }
-});    
+});
+
+
+let menu = document.querySelector("nav");
+let button = document.querySelector(".menu-btn");
+
+function toggleMenu() {
+    menu.classList.toggle('hide');
+    console.log("no");
+}
+
+button.addEventListener('click', toggleMenu);

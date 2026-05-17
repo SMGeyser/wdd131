@@ -6,12 +6,13 @@
     <title>Cool Pics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cool-pics.css">
+    <script src="cool-pics.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Cool Pics 📷</h1>
-        <div><a href="#">Menu</a></div>
-        <nav>
+        <div><a href="#" class="menu-btn">Menu</a></div>
+        <nav class="hide">
             <a href="#">Home</a>
             <a href="#">People</a>
             <a href="#">Places</a>
@@ -34,6 +35,10 @@
         <img src="cool-pic.jpg">
         <img src="cool-pic.jpg">
     </div>
+    <dialog>
+        <img>
+        <button class="close-viewer">X</button>
+    </dialog>
     <footer>
         <p>&copy; 2026 Not a real website</p>
     </footer>
