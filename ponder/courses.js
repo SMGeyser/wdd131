@@ -39,3 +39,7 @@ document.querySelector("#enrollStudent").addEventListener("click", function () {
     aCourse.enrollStudent(sectionNum);
 });
           
+
+document.querySelector('img').setAttribute('src', aCourse.logo);
+document.querySelector('img').setAttribute('alt', aCourse.name);
+document.querySelector('img').style.width = '100px';
