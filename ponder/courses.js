@@ -43,3 +43,25 @@ document.querySelector("#enrollStudent").addEventListener("click", function () {
 document.querySelector('img').setAttribute('src', aCourse.logo);
 document.querySelector('img').setAttribute('alt', aCourse.name);
 document.querySelector('img').style.width = '100px';
+
+
+`                  
+<!-- Open Graph (Facebook, LinkedIn, etc.) -->
+<meta property="og:type" content="Courses">
+<meta property="og:title" content="Course enrollment">
+<meta property="og:description" content="enrolling students">
+<meta property="og:url" content="https://smgeyser.github.io/wdd131/ponder/courses.html">
+<meta property="og:image" content="images/js-logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Put Page Title Here">
+<meta name="twitter:description" content="Put Page Description Here">
+<meta name="twitter:image" content="https://yourURLofSocialPreviewImageHere.png">
+
+<!-- One favicon (ICO works everywhere) -->
+<link rel="icon" href="/favicon.ico">
+
+<!-- One Apple Touch Icon (iOS home screen) -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png"></link>
+`
