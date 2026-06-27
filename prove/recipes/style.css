@@ -63,7 +63,7 @@ h1 {
 }
 
 .recipe-box button {
-    width: 60px;
+    width: auto;
     margin: 10px 0;
 }
 
@@ -96,6 +96,7 @@ footer {
 @media (min-width: 750px) {
     .recipe-box {
         flex-direction: row;
+        margin: 2.5% 10%;
     }
 
     .recipe-info {

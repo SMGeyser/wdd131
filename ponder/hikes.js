@@ -73,53 +73,20 @@ const hikes = [
 ];
                 
 
-function search() {
+let hikeContainer = document.querySelector("#hike-container");
+let button = document.querySelector("#search-button");
+let input = document.querySelector("#search");
 
-    let hikeQuery = input.value;
-
-    let filteredHikes = hikes.filter(function(hike){
-        return ( 
-            hike.name.toLowerCase().includes(hikeQuery.toLowerCase()) ||
-            hike.description.toLowerCase().includes(hikeQuery.toLowerCase()) || 
-            hike.tags.find(tag => tag.toLowerCase().includes(hikeQuery.toLowerCase()))
-        );
-    })
-
-    function compareHikes(a,b) {
-    if (a.difficulty < b.difficulty) {
-        return -1;
-    } else if (a.difficulty > b.difficulty) {
-        return 1;
-    }
-    return 0;
-    }
-
-    let sortedHikes = filteredHikes.sort(compareHikes);
-
-    // clear out any previous content
-    hikeContainer.innerHTML = '';
-    // output onto screen
-    sortedHikes.forEach(function(hike){
-      renderHike(hike);
-    })
-}
-
-let hikeContainer = document.querySelector('#hike-container');
-let input = document.querySelector('#search');
-let button = document.querySelector('button');
+let randomNum = Math.floor(Math.random()*hikes.length);
 
 button.addEventListener('click', search);
 
-/* for the enter key to work on search - not just clicking the search button */
 input.addEventListener('keypress', handleEnter);
 function handleEnter(event) {
   if (event.key === 'Enter') {
     search();
   }
 }
-
-let randomNum = Math.floor(Math.random() * hikes.length);
-console.log(randomNum);
 
 function tagTemplate(tags) {
     return tags.map((tag)=> `<button>${tag}</button>`).join(' ');
@@ -165,4 +132,37 @@ function init() {
 }
 
 init();
-                
+
+function search() {
+  
+  let hikeQuery = input.value;
+
+  let filterHikes = hikes.filter(function(hike){
+    return(
+      hike.name.toLowerCase().includes(hikeQuery.toLowerCase()) ||
+      hike.description.toLowerCase().includes(hikeQuery.toLowerCase()) ||
+      hike.tags.find(tag => tag.toLowerCase().includes(hikeQuery.toLowerCase()))
+    );
+  });
+
+  console.log(filterHikes);
+
+  let sortedHikes = filterHikes.sort(compareHike);
+
+  function compareHike(a,b) {
+  if (a.difficulty < b.difficulty) {
+      return -1;
+  } else if (a.difficulty > b.difficulty) {
+      return 1;
+  }
+  return 0;
+  }
+
+  console.log(sortedHikes);
+
+  hikeContainer.innerHTML = '';
+
+  sortedHikes.forEach(function(hike){
+    renderHike(hike);
+  })
+}
