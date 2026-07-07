@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Backgrounds */
+  --bg-main: #0B132B;
+  --bg-surface: #1C2541;
+  --bg-surface-hover: #222E50;
+
+  /* Brand Accents */
+  --accent-aurora: #48CAE4;
+  --accent-frost: #00B4D8;
+  
+  /* Text & Borders */
+  --text-primary: #F8FAFC;
+  --text-muted: #94A3B8;
+  --border-cool: #334155;
+}
+
+ /* footer css */
+footer {
+  background-color: #080e20; 
+  color: var(--text-muted); 
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-container {
+  flex-direction: column;
+  text-align: center;
+}
+  
+.footer-brand p {
+    margin: 0 auto;
+}
+
+/* Brand Section Layout */
+.footer-brand {
+  min-width: 250px;
+}
+
+.footer-logo img {
+  width: 10%;
+  mask-image: radial-gradient(circle, #080e20 5%, transparent 90%);
+  margin-bottom: 10px;
+  border-radius: 45px;
+}
+
+/* Nav & Meta Lists Layout */
+.footer-links, .footer-meta {
+  flex: 1;
+  min-width: 150px;
+}
+
+.site-footer h4 {
+  font-family: 'Orbitron', sans-serif;
+  color: #f8fafc; /* Crisp snow text */
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  letter-spacing: 0.05em;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #48cae4; 
+}
+
+.footer-meta p {
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.footer-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .footer-tagline {
+    max-width: 300px;
+    line-height: 1.5;
+  }
+
+  .footer-flex {
+    flex-direction: row;
+  }
+}
