@@ -2,23 +2,55 @@
 
 :root {
   /* Backgrounds */
-  --bg-main: #0B132B;
-  --bg-surface: #1C2541;
-  --bg-surface-hover: #222E50;
+  --main: #10192f;
+  --surface: #1c2541;
 
   /* Brand Accents */
-  --accent-aurora: #48CAE4;
-  --accent-frost: #00B4D8;
+  --accent-frost: #00b4d8;
   
   /* Text & Borders */
-  --text-primary: #F8FAFC;
-  --text-muted: #94A3B8;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
   --border-cool: #334155;
+  --hover-link: #48cae4;
+}
+
+/* Header CSS */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  background-color: var(--main);
+  margin: 0;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 100px;
+}
+
+header nav {
+  flex-grow: 0.5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--hover-link)
 }
 
  /* footer css */
 footer {
-  background-color: #080e20; 
+  background-color: var(--main); 
   color: var(--text-muted); 
   padding: 40px 20px;
   font-size: 0.9rem;
@@ -34,30 +66,21 @@ footer {
     margin: 0 auto;
 }
 
-/* Brand Section Layout */
-.footer-brand {
-  min-width: 250px;
-}
-
 .footer-logo img {
   width: 10%;
-  mask-image: radial-gradient(circle, #080e20 5%, transparent 90%);
   margin-bottom: 10px;
-  border-radius: 45px;
 }
 
-/* Nav & Meta Lists Layout */
+/* Nav & Meta Lists */
 .footer-links, .footer-meta {
-  flex: 1;
+  flex-grow: 1;
   min-width: 150px;
 }
 
 .site-footer h4 {
   font-family: 'Orbitron', sans-serif;
-  color: #f8fafc; /* Crisp snow text */
-  font-size: 0.95rem;
+  color: var(--text-primary); 
   margin-bottom: 15px;
-  letter-spacing: 0.05em;
 }
 
 .footer-links ul {
@@ -71,18 +94,17 @@ footer {
 }
 
 .footer-links a {
-  color: #94a3b8;
+  color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: #48cae4; 
+  color: var(--hover-link); 
 }
 
 .footer-meta p {
   margin: 0 0 10px 0;
-  line-height: 1.4;
 }
 
 .footer-flex {
@@ -90,7 +112,12 @@ footer {
     flex-direction: column;
 }
 
+
+/* Mobile First */
 @media (min-width: 600px) {
+  header nav {
+    flex-grow: 0.25
+  }
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
