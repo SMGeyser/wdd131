@@ -82,6 +82,7 @@ header nav a:hover {
 }
 
 .hero-btns {
+  text-align: center;
   display: flex;
   flex-direction: column;
   margin: 15%;
