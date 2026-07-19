@@ -541,16 +541,24 @@ const spellbook = [
   }
 ];
 
-let spells = document.querySelector('#character-spells');
-const wizardSpells = spellbook.filter(spell => spell.classes.includes("Wizard"));
-let randomNum = Math.floor(Math.random()*wizardSpells.length);
+let spells = document.querySelector('#spells-container')
+let button = document.querySelector("#search-button");
+let input = document.querySelector("#search");
+
+button.addEventListener('click', search);
+input.addEventListener('keypress', handleEnter);
+function handleEnter(event) {
+  if (event.key === 'Enter') {
+    search();
+  }
+}
 
 function spellsTemplate(spell) {
     return `<div class="spell-list">
-      <h1 class="spell-name"><strong>${spell.name}</strong></h1>
-			<p class="spell-level"><strong>Spell Level:</strong> ${spell.level}</p>
-			<p class="spell-description">${spell.desc}</p>
-      </div>`
+        <h1 class="spell-name"><strong>${spell.name}</strong></h1>
+		<p class="spell-level"><strong>Spell Level:</strong> ${spell.level}</p>
+		<p class="spell-description">${spell.desc}</p>
+            </div>`
 }
 
 function renderSpells(spell) {
@@ -558,8 +566,50 @@ function renderSpells(spell) {
   spells.innerHTML += html;
 }
 
-function init() {
-  renderSpells(wizardSpells[randomNum]);
+function search() {
+  
+  let spellQuery = input.value;
+
+  let filterSpells = spellbook.filter(function(spell){
+    return(
+      spell.name.toLowerCase().includes(spellQuery.toLowerCase()) ||
+      spell.desc.toLowerCase().includes(spellQuery.toLowerCase()) ||
+      spell.school.toLowerCase().includes(spellQuery.toLowerCase()) ||
+      spell.classes.find(classes => classes.toLowerCase().includes(spellQuery.toLowerCase()))
+    );
+  });
+
+  let sortedSpells = filterSpells.sort(compareSpells);
+
+  function compareSpells(a,b) {
+  if (a.difficulty < b.difficulty) {
+      return -1;
+  } else if (a.difficulty > b.difficulty) {
+      return 1;
+  }
+  return 0;
+  }
+
+  spellContainer.innerHTML = '';
+
+  sortedSpells.forEach(function(spell){
+    renderSpells(spell);
+  })
 }
 
-init();
+let spellContainer = document.querySelector("#spells-container");
+
+spellbook.forEach(spell => {
+
+    const article = document.createElement('article');
+    article.className = 'spell-list';
+
+    let html = `
+        <h1 class="spell-name"><strong>${spell.name}</strong></h1>
+		    <p class="spell-level"><strong>Spell Level:</strong> ${spell.level}</p>
+		    <p class="spell-description">${spell.desc}</p>`;
+
+    article.innerHTML = html;
+    spellContainer.appendChild(article);
+
+});

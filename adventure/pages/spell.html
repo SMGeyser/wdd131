@@ -6,7 +6,7 @@
 	<title>Spells | Dynamic Character Stats</title>
     <link rel="stylesheet" href="../styles/reset.css">
 	<link rel="stylesheet" href="../styles/style.css">
-	<script src="../adventure.js" defer></script>
+	<script src="../spells.js" defer></script>
 </head>
 <body>
 	<header>
@@ -17,8 +17,11 @@
 			<a href="spell.html" alt="Link to spells page">Spellbook</a>
 		</nav>
 	</header>
-
-	<div class="spells-container"></div>
+	<div class="search-container">
+		<input id="search" type="text" placeholder="Search for Spells">
+		<button id="search-button">Find</button>
+	</div>
+	<section id="spells-container"></section>
 
 	<footer>
 		<div class="footer-container">
